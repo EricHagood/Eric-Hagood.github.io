@@ -1,5 +1,5 @@
 let deckID = '';
-let playerArray = [{name: 'north', points: 0}, {name: 'east', points: 0}, {name: 'player', points: 0}, {name: 'west', points: 0}];
+let playerArray = [{name: 'north', points: 0}, {name: 'east', points: 0}, {name: 'south', points: 0}, {name: 'west', points: 0}];
 ////////////////////
 ///On load function. Loads in API after page has fully loaded to avoid any possible appending erorrs
 ////////////////////
@@ -33,6 +33,7 @@ function draw(){
             playerArray[i].cards = [];//This line of code is present to empty the array when the shuffling the deck
             playerArray[i].cards = drawnCards.cards;
             console.log(playerArray[i]);
+            appendCards(i);
             
         }), (error) =>{
             console.error(error);
@@ -50,8 +51,20 @@ function shuffle(){
         url: 'https://deckofcardsapi.com/api/deck/' + deckID + '/shuffle/'
     }).then((shuffledCards)=>{
         console.log(shuffledCards.success);
-        draw();
     }), (error) =>{
         console.error(error);
     }
 }
+////////////////////
+///
+////////////////////
+function appendCards(playerNum){
+    console.log('appendCards function called');
+    $('.' + playerArray[playerNum].name).append('<img src=' + playerArray[playerNum].cards[0].image + '>');
+}
+
+
+
+////////////////////
+///
+////////////////////
