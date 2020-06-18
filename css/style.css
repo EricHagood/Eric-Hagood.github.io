@@ -1,45 +1,37 @@
-body{
-    height: 100%;
-}
 .container{
-    /* position: relative; */
-    height: 100%;
+    position: relative;
+    height: 500px;
 }
 .north{
     background-color: red;
     max-width: 80%;
     width: 80%;
-    height: 20px;
+    /* height: 20px; */
     margin-left: 10%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
+/* Source: https://stackoverflow.com/questions/526035/how-can-i-position-my-div-at-the-bottom-of-its-container for getting .south to diplay on the bottom of the container*/
 .south{
     background-color: red;
-    padding: 0;
-    margin: 0;
-    /* width: 80%;
-    /* height: 20px; */
-    /* margin: 0; */
-    /* margin-left: 10%; */
+    position: absolute;
     bottom: 0;
-    /* margin-top: 20%; */
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    width: 80%;
+    margin-left: 10%;
 } 
-
 .east{
     margin: 0;
     width: 20%;
     display: flex;
     justify-content: flex-start;
+    float: right;
 }
 .west{
     width: 20%;
     display: flex;
     justify-content: flex-end;
+    float: left;
 }
 button{
     margin-left: 500px;
