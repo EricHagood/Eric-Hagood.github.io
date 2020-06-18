@@ -25,20 +25,22 @@ $(()=>{
 ///This function draws 13 cards into each of the players hands.
 //////////////
 function draw(){
-    for (let i = 0; i < playerArray.length; i++){
         $.ajax({
-        url: 'https://deckofcardsapi.com/api/deck/' + deckID + '/draw/?count=13',
+        url: 'https://deckofcardsapi.com/api/deck/' + deckID + '/draw/?count=52',
         // type: 'GET',
         }).then((drawnCards)=>{
-            playerArray[i].cards = [];//This line of code is present to empty the array when the shuffling the deck
-            playerArray[i].cards = drawnCards.cards;
-            console.log(playerArray[i]);
-            appendCards(i);
+            for (let i = 0; i < playerArray.length; i++){
+                playerArray[i].cards = [];//This line of code is present to empty the array when the shuffling the deck
+                playerArray[i].cards = drawnCards.cards.splice(0, 13);
+                console.log(playerArray[i]);
+            }
+            
             
         }), (error) =>{
             console.error(error);
         }
-    }
+
+    // appendCards(2);
 }//On multiple clicks the deck is empty so the hand is overwritten and becomes empty
 //TODO: Fix this by either removing the draw button or creating logic to check if hand is still in play and to not deal again.
 
@@ -56,11 +58,13 @@ function shuffle(){
     }
 }
 ////////////////////
-///
+///This function will append the card images to the players hand.
 ////////////////////
 function appendCards(playerNum){
     console.log('appendCards function called');
-    $('.' + playerArray[playerNum].name).append('<img src=' + playerArray[playerNum].cards[0].image + '>');
+    for (let i = 0; i < 13; i++){
+        $('.' + playerArray[playerNum].name).append('<img src=' + playerArray[playerNum].cards[i].image + '>');
+    }
 }
 
 
