@@ -34,13 +34,11 @@ function draw(){
                 playerArray[i].cards = drawnCards.cards.splice(0, 13);
                 console.log(playerArray[i]);
             }
-            
-            
+            appendCards(2);
         }), (error) =>{
             console.error(error);
         }
 
-    // appendCards(2);
 }//On multiple clicks the deck is empty so the hand is overwritten and becomes empty
 //TODO: Fix this by either removing the draw button or creating logic to check if hand is still in play and to not deal again.
 
