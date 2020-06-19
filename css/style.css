@@ -50,10 +50,9 @@ body{
     height: 100%;
     overflow: hidden;
 }
+/* Gets the card images to display in the div all in a row.*/
 img{
-    margin-bottom: 10%;;
-    transform: scale(.5);
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
+    margin: 0;
+    width: 7%;
+    display: inline;
 }
