@@ -56,3 +56,7 @@ img{
     width: 7%;
     display: inline;
 }
+/* https://codepen.io/mrcow/pen/hGHsg I am linking this as it helped me to understand that a negative value translated upwards */
+img:hover{
+    transform: translate(10px, -10%);
+}

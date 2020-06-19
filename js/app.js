@@ -61,7 +61,9 @@ function shuffle(){
 function appendCards(playerNum){
     console.log('appendCards function called');
     for (let i = 0; i < 13; i++){
-        $('.' + playerArray[playerNum].name).append('<img src=' + playerArray[playerNum].cards[i].image + '>');
+        let img = "<img src=" + playerArray[playerNum].cards[i].image + ' id=' + playerArray[playerNum].cards[i].code + '>';
+        //I was having issues with jquery and setting the id to the image and not the div so I decided to do it this way.
+        $('.' + playerArray[playerNum].name).append(img);
     }
 }
 
