@@ -20,6 +20,7 @@ $(()=>{
     getDeck();
     $('.draw').on('click', draw);
     $('.shuffle').on('click', shuffle);
+    // $('.playerCard').on('click', play);
     });
 //////////////
 ///This function draws 13 cards into each of the players hands.
@@ -61,10 +62,21 @@ function shuffle(){
 function appendCards(playerNum){
     console.log('appendCards function called');
     for (let i = 0; i < 13; i++){
-        let img = "<img src=" + playerArray[playerNum].cards[i].image + ' id=' + playerArray[playerNum].cards[i].code + '>';
+        let img = "<img src=" + playerArray[playerNum].cards[i].image + ' id=' + playerArray[playerNum].cards[i].code + " class= playerCard>";
         //I was having issues with jquery and setting the id to the image and not the div so I decided to do it this way.
+        //I also couldn't append a class as seen in the next line I commented out so hard coding it is.
+        // $(img).addClass('playerCard');
         $('.' + playerArray[playerNum].name).append(img);
     }
+    $('.playerCard').on('click', play);
+}
+
+////////////////////
+///This functin is meant to handle the logic of when a plyer clicks on a card.
+////////////////////
+function play(){
+    //TODO: Add logic for handling clicked cards as well as checking to see if the card clicked is a legal play
+    console.log("This does work");
 }
 
 
