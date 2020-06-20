@@ -8,23 +8,26 @@ html, body{
     position: relative;
 }
 .north{
-    background-color: red;
+    /* background-color: red; */
     max-width: 80%;
     width: 80%;
     height: 20%;
     margin-left: 10%;
-    display: flex;
+    text-align: center;
+    /* display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-start; */
 }
 /* Source: https://stackoverflow.com/questions/526035/how-can-i-position-my-div-at-the-bottom-of-its-container for getting .south to diplay on the bottom of the container*/
 .south{
-    background-color: red;
+    /* background-color: red; */
     position: absolute;
     bottom: 0;
     height: 20%;
     width: 80%;
     margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
 } 
 .east{
     margin-top: 10%;
@@ -36,10 +39,12 @@ html, body{
     float: right;
 }
 .west{
-    margin-top: 20%;
+    margin-top: 10%;
+    margin-bottom: 10%;
     width: 20%;
     height: 60%;
     float: left;
+    text-align: right;
 }
 button{
     margin-left: 500px;
@@ -51,12 +56,14 @@ body{
     overflow: hidden;
 }
 /* Gets the card images to display in the div all in a row.*/
-img{
-    margin: 0;
+/* https://stackoverflow.com/questions/10989238/center-image-horizontally-within-a-div This post on stack overflow really helped me understand how to get the images to align in the center of the div in the way I wanted them to. */
+.playerCard{
+    /* margin: auto; */
     width: 7%;
-    display: inline;
+    display: inline-block;
+    margin: auto;
 }
 /* https://codepen.io/mrcow/pen/hGHsg I am linking this as it helped me to understand that a negative value translated upwards */
-img:hover{
+.playerCard:hover{
     transform: translate(10px, -10%);
 }

@@ -1,5 +1,6 @@
 let deckID = '';
 let playerArray = [{name: 'north', points: 0}, {name: 'east', points: 0}, {name: 'south', points: 0}, {name: 'west', points: 0}];
+let trick = [{}, {}, {}, {}];
 ////////////////////
 ///On load function. Loads in API after page has fully loaded to avoid any possible appending erorrs
 ////////////////////
@@ -26,6 +27,7 @@ $(()=>{
 ///This function draws 13 cards into each of the players hands.
 //////////////
 function draw(){
+    $('.draw').hide();
         $.ajax({
         url: 'https://deckofcardsapi.com/api/deck/' + deckID + '/draw/?count=52',
         // type: 'GET',
@@ -74,12 +76,29 @@ function appendCards(playerNum){
 ////////////////////
 ///This functin is meant to handle the logic of when a plyer clicks on a card.
 ////////////////////
-function play(){
+function play(event){
     //TODO: Add logic for handling clicked cards as well as checking to see if the card clicked is a legal play
     console.log("This does work");
+    console.log(event);
+    $(event.currentTarget).remove();
+    let str = $(event.currentTarget).attr('id');
+    moveToTrick(str, 2);
 }
 
-
+////////////////////
+///This function takes the card code and the player number in the array and moves the played card from the players hand and into the current trick
+////////////////////
+function moveToTrick(cardCode, player){
+    console.log(trick);
+    for (let i = 0; i < playerArray[player].cards.length; i++){
+        if (playerArray[player].cards[i].code === cardCode){
+            trick[player].card = playerArray[player].cards[i];
+            trick[player].name = playerArray[player].name;
+            playerArray[player].cards.splice(i, 1);
+            console.log(playerArray);
+        }
+    }
+}
 
 ////////////////////
 ///
