@@ -46,9 +46,14 @@ html, body{
     float: left;
     text-align: right;
 }
+.trick{
+    margin-left: 30%;
+    width: 40%;
+    height: 40%;
+}
 button{
-    margin-left: 500px;
-    margin-top: 500px;
+    /* margin-left: 500px;
+    margin-top: 500px; */
 }
 body{
     margin: 0;
@@ -66,4 +71,7 @@ body{
 /* https://codepen.io/mrcow/pen/hGHsg I am linking this as it helped me to understand that a negative value translated upwards */
 .playerCard:hover{
     transform: translate(10px, -10%);
+}
+img{
+    width: 7%;
 }

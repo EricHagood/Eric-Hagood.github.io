@@ -1,5 +1,5 @@
 let deckID = '';
-let playerArray = [{name: 'north', points: 0}, {name: 'east', points: 0}, {name: 'south', points: 0}, {name: 'west', points: 0}];
+let playerArray = [{name: 'north', points: 0}, {name: 'east', points: 0}, {name: 'west', points: 0}, {name: 'south', points: 0}];
 let trick = [{}, {}, {}, {}];
 ////////////////////
 ///On load function. Loads in API after page has fully loaded to avoid any possible appending erorrs
@@ -37,7 +37,7 @@ function draw(){
                 playerArray[i].cards = drawnCards.cards.splice(0, 13);
                 console.log(playerArray[i]);
             }
-            appendCards(2);
+            appendCards(3);
         }), (error) =>{
             console.error(error);
         }
@@ -82,7 +82,8 @@ function play(event){
     console.log(event);
     $(event.currentTarget).remove();
     let str = $(event.currentTarget).attr('id');
-    moveToTrick(str, 2);
+    $('.trick').append(event.currentTarget);
+    moveToTrick(str, 3);
 }
 
 ////////////////////
@@ -99,6 +100,18 @@ function moveToTrick(cardCode, player){
         }
     }
 }
+//This function did not work and was honestly dumb.
+// function aiCards(){
+//     console.log("aiCards function called");
+//     for(let i = 0; i < 3; i++){
+//         for (let j = 0; j < 13; j++){
+//             let img = "<img src='img/playing-card-back.jpg' class=" + playerArray[i].name + "Cards >";
+//             $('.'+ playerArray[i]).append(img);
+//         }
+//     }
+// }
+
+
 
 ////////////////////
 ///
