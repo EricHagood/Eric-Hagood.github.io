@@ -55,7 +55,7 @@ html, body{
     /* background-color: red; */
     max-width: 80%;
     width: 80%;
-    height: 20%;
+    height: 10%;
     margin-left: 10%;
     text-align: center;
 }
@@ -71,19 +71,19 @@ html, body{
     text-align: center;
 } 
 .east{
-    margin-top: 10%;
-    margin-bottom: 10%;
+    /* margin-top: 10%; */
+    /* margin-bottom: 10%; */
     width: 20%;
-    height: 50%;
-    display: flex;
-    justify-content: flex-start;
+    height: 80%;
+    /* display: flex;
+    justify-content: flex-start; */
     float: right;
 }
 .west{
-    margin-top: 10%;
-    margin-bottom: 10%;
+    /* margin-top: 10%; */
+    /* margin-bottom: 10%; */
     width: 20%;
-    height: 50%;
+    height: 60%;
     float: left;
     text-align: right;
 }
@@ -112,6 +112,26 @@ body{
 .playerCard:hover{
     transform: translate(10px, -10%);
 }
-img{
+
+
+.northCard{
     width: 7%;
+}
+.eastCard{
+    width: 15%;
+    margin: auto;
+    padding: 0;
+    height: auto;
+    /* float: left; */
+    display: flex;
+    flex-direction: column;
+    transform: rotate(90deg);
+}
+.westCard{
+    width: 15%;
+    margin: auto;
+    /* padding: auto; */
+    display: flex;
+    flex-direction: column;
+    transform: rotate(90deg);
 }

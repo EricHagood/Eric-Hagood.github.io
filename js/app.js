@@ -1,5 +1,5 @@
 let deckID = '';
-let playerArray = [{name: 'north', points: 0}, {name: 'east', points: 0}, {name: 'west', points: 0}, {name: 'south', points: 0}];
+let playerArray = [{name: 'west', points: 0}, {name: 'north', points: 0}, {name: 'east', points: 0}, {name: 'south', points: 0}];
 let trick = [{}, {}, {}, {}];
 ////////////////////
 ///On load function. Loads in API after page has fully loaded to avoid any possible appending erorrs

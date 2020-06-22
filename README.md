@@ -1,1 +1,3 @@
 # Eric-Hagood.github.io
+Link to live site: https://erichagood.github.io/Eric-Hagood.github.io/
+For this project I used to deck of cards api in an attempt to create the card game hearts. My initial approach to this project was, admittedly, wrong from the start. I needed to take more time in the design phase instead of jumping straight into coding. I went ahead and wrote a lot of functions that I would need but I went about testing them is ways that made it harder to implement the proper game logic later on without re writing a large portion of code. 
