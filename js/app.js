@@ -37,7 +37,9 @@ function draw(){
                 playerArray[i].cards = drawnCards.cards.splice(0, 13);
                 console.log(playerArray[i]);
             }
+            console.log(checkStart());
             appendCards(3);
+            console.log("broken out of the append method");
         }), (error) =>{
             console.error(error);
         }
@@ -70,7 +72,7 @@ function appendCards(playerNum){
         // $(img).addClass('playerCard');
         $('.' + playerArray[playerNum].name).append(img);
     }
-    $('.playerCard').on('click', play);
+    // $('.playerCard').on('click', play);
 }
 
 ////////////////////
@@ -110,7 +112,18 @@ function moveToTrick(cardCode, player){
 //         }
 //     }
 // }
-
+////////////////////
+///This function will be run at the start of every round to find which player has the two of clubs and starts the trick
+////////////////////
+function checkStart(){
+    for (let x = 0; x < playerArray.length; x++){
+        for (let y = 0; y < 13; y++){
+            if (playerArray[x].cards[y].code == '2C'){
+                return playerArray[x].name;
+            }
+        }
+    }
+}
 
 
 ////////////////////
