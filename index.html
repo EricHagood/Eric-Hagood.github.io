@@ -11,12 +11,30 @@
 <body>
     <div class='container'>
 
-        <nav class='rules'>
-        <button>Rules</button>
+        <nav class='rulenav'>
+        <button id="rulesButton">Rules</button>
         </nav>
 
-        <div id='rules-modal'>
-            
+        <div class='modal'>
+            <div class='rules-modal'>
+                <a id='close' href ='#'>Close</a>
+                <!-- The rules for the game was taken from this website: https://bicyclecards.com/how-to-play/hearts/-->
+                <h3>CARD VALUES/SCORING</h3>
+                <p class='rules_text'>At the end of each hand, players count the number of hearts they have taken as well as the queen of spades, if applicable. Hearts count as one point each and the queen counts 13 points.
+                    Each heart - 1 point
+                    The Q - 13 points
+                    The aggregate total of all scores for each hand must be a multiple of 26.
+                    The game is usually played to 100 points (some play to 50).
+                    When a player takes all 13 hearts and the queen of spades in one hand, instead of losing 26 points, that player scores zero and each of his opponents score an additional 26 points.</p>
+                <h3>Playing</h3>
+                <p class='rules_text'>The player holding the 2 of clubs after the pass makes the opening lead. If the 2 has been removed for the three handed game, then the 3 of clubs is led.
+        
+                    Each player must follow suit if possible. If a player is void of the suit led, a card of any other suit may be discarded. However, if a player has no clubs when the first trick is led, a heart or the queen of spades cannot be discarded. The highest card of the suit led wins a trick and the winner of that trick leads next. There is no trump suit.
+                    
+                    The winner of the trick collects it and places it face down. Hearts may not be led until a heart or the queen of spades has been discarded. The queen does not have to be discarded at the first opportunity.
+                    
+                    The queen can be led at any time.</p>
+            </div>
         </div>
 
         <div class='north'>

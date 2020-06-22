@@ -21,6 +21,13 @@ $(()=>{
     getDeck();
     $('.draw').on('click', draw);
     $('.shuffle').on('click', shuffle);
+    $('#rulesButton').on('click', ()=>{
+        $('.modal').css('display', 'block');
+        $('.rulenav').css('left', '-80px');
+    })
+    $('#close').on('click', ()=>{
+        $('.modal').css('display', 'none');
+    })
     // $('.playerCard').on('click', play);
     });
 //////////////
