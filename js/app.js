@@ -35,6 +35,9 @@ $(()=>{
 //////////////
 function draw(){
     $('.draw').hide();
+    $('.northCard').css('display', 'inline-block');
+    $('.westCard').css('display', 'flex');
+    $('.eastCard').css('display', 'flex');
         $.ajax({
         url: 'https://deckofcardsapi.com/api/deck/' + deckID + '/draw/?count=52',
         // type: 'GET',
