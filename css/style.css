@@ -8,9 +8,19 @@ html, body{
     position: relative;
 }
 /* https://www.w3schools.com/howto/howto_css_sidenav_buttons.asp This is the source for the code below. This was really helpful in improving my understanding of css. */
+.rulenavStart{
+    position: absolute;
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px;
+    text-decoration: none;
+    font-size: 20px;
+    color: blue;
+    border-radius: 0 5px 5px 0;
+}
 .rulenav{
     position: absolute;
-    left: 0;
+    left: -80px;
     transition: 0.3s;
     padding: 15px;
     width: 100px;
@@ -88,12 +98,13 @@ html, body{
     text-align: right;
 }
 .trick{
-    margin-left: 30%;
+    margin: 150px auto;
     width: 40%;
     height: 40%;
 }
-button{
-    
+.draw{
+    position: relative;
+    margin: -50px 200px;
 }
 body{
     margin: 0;

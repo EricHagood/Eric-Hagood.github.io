@@ -21,9 +21,9 @@ $(()=>{
     getDeck();
     $('.draw').on('click', draw);
     $('.shuffle').on('click', shuffle);
-    $('#rulesButton').on('click', ()=>{
+    $('#rulesButton').on('click', (event)=>{
         $('.modal').css('display', 'block');
-        $('.rulenav').css('left', '-80px');
+        $(event.currentTarget).removeClass('rulenavStart').addClass('rulenav');
     })
     $('#close').on('click', ()=>{
         $('.modal').css('display', 'none');
