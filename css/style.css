@@ -39,6 +39,9 @@ html, body{
         left: 0;
         width: 75px;
     }
+    .draw{
+        margin: auto;
+    }
 }
 /* The source for this code is from a super unfamilliar article: https://git.generalassemb.ly/seir-5-26/student-resources/tree/master/1_front_end_development/w03d05/morning_exercise*/
 .modal{
@@ -83,10 +86,11 @@ html, body{
     text-align: center;
 } 
 .east{
-    /* margin-top: 10%; */
-    /* margin-bottom: 10%; */
+    /* margin-top: 10%;
+    margin-bottom: 10%; */
+    text-align: center;
     width: 20%;
-    height: 80%;
+    height: 60%;
     /* display: flex;
     justify-content: flex-start; */
     float: right;
@@ -97,7 +101,7 @@ html, body{
     width: 20%;
     height: 60%;
     float: left;
-    text-align: right;
+    text-align: center;
 }
 .trick{
     margin: 150px auto;

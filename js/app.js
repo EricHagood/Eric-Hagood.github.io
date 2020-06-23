@@ -1,6 +1,7 @@
 let deckID = '';
 let playerArray = [{name: 'west', points: 0}, {name: 'north', points: 0}, {name: 'east', points: 0}, {name: 'south', points: 0}];
 let trick = [{}, {}, {}, {}];
+let turnOrder = 0;
 ////////////////////
 ///On load function. Loads in API after page has fully loaded to avoid any possible appending erorrs
 ////////////////////
@@ -47,8 +48,8 @@ function draw(){
                 playerArray[i].cards = drawnCards.cards.splice(0, 13);
                 console.log(playerArray[i]);
             }
-            console.log(checkStart());
             appendCards(3);
+            checkStart();
             console.log("broken out of the append method");
         }), (error) =>{
             console.error(error);
@@ -92,14 +93,15 @@ function play(event){
     //TODO: Add logic for handling clicked cards as well as checking to see if the card clicked is a legal play
     console.log("This does work");
     console.log(event);
-    $(event.currentTarget).remove();
+    $(event.currentTarget).remove().removeClass('playerCard');
     let str = $(event.currentTarget).attr('id');
     $('.trick').append(event.currentTarget);
     moveToTrick(str, 3);
+    aiMove(0);
 }
 
 ////////////////////
-///This function takes the card code and the player number in the array and moves the played card from the players hand and into the current trick
+///This function takes the card code and the player number in the array and moves the played card from the players hand and into the current trick. It also adds the player name so that it can keep track of which player played which card.
 ////////////////////
 function moveToTrick(cardCode, player){
     console.log(trick);
@@ -108,7 +110,7 @@ function moveToTrick(cardCode, player){
             trick[player].card = playerArray[player].cards[i];
             trick[player].name = playerArray[player].name;
             playerArray[player].cards.splice(i, 1);
-            console.log(playerArray);
+            // console.log(playerArray);
         }
     }
 }
@@ -129,9 +131,31 @@ function checkStart(){
     for (let x = 0; x < playerArray.length; x++){
         for (let y = 0; y < 13; y++){
             if (playerArray[x].cards[y].code == '2C'){
-                return playerArray[x].name;
+                console.log(playerArray[x].name);
+                turnOrder = x;
+                if(x != 3){
+                    turnOrder++;
+                    moveToTrick(playerArray[x].cards[y].code, x);
+                    aiMove(turnOrder);
+                }else{
+                    $('.playerCard').on('click', play);
+                    turnOrder = 0;
+                }
+                // return playerArray[x].name;
             }
         }
+    }
+}
+
+////////////////////
+///This function makes the AI play cards and moves those cards into the trick array
+////////////////////
+function aiMove(aiNum){
+    moveToTrick(playerArray[aiNum].cards[Math.floor(Math.random() * playerArray[aiNum].cards.length)].code, aiNum);
+    if (aiNum != 3){
+        aiMove(turnOrder++);
+    }else{
+        $('.playerCard').on('click', play);
     }
 }
 
