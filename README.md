@@ -1,6 +1,7 @@
 # Eric-Hagood.github.io
 Link to live site: https://erichagood.github.io/Eric-Hagood.github.io/
 For this project I used to deck of cards api in an attempt to create the card game hearts. Most all of the styling for the page was done in css with a few changes made to the css with jquery.
+Technologies used: HTML, CSS, Javascript, Jquery, AJAX
 
 My initial approach to this project was, admittedly, wrong from the start. I needed to take more time in the design phase instead of jumping straight into coding. I went ahead and wrote a lot of functions that I would need but I went about testing them is ways that made it harder to implement the proper game logic later on without re writing a large portion of code. I spent far to little time in the developmental stage for this project and the little time I did spend pseudo coding and wire framing was far to loose. I developed what functions I would need but I never thought to add how these function would need to interact with eachother to keep the game progressing. 
 
