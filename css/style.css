@@ -2,6 +2,9 @@
 html, body{
     height: 100%;
 }
+body{
+    background-image: url("img/Card-table-background.jpg");
+}
 .container{
     /* margin: auto; */
     height: 100%;
@@ -139,7 +142,7 @@ body{
     width: 7%;
 }
 .eastCard{
-    width: 15%;
+    width: 10%;
     margin: auto;
     padding: 0;
     height: auto;
@@ -149,7 +152,7 @@ body{
     transform: rotate(90deg);
 }
 .westCard{
-    width: 15%;
+    width: 10%;
     margin: auto;
     /* padding: auto; */
     display: none;
