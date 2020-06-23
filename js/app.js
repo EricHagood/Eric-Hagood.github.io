@@ -153,7 +153,7 @@ function checkStart(){
 ////////////////////
 function aiMove(aiNum){
     moveToTrick(playerArray[aiNum].cards[Math.floor(Math.random() * playerArray[aiNum].cards.length)].code, aiNum);
-    if (aiNum < 3){
+    if (aiNum < 2){
         aiMove(turnOrder++);
     }else{
         $('.playerCard').on('click', play);

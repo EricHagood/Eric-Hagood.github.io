@@ -3,6 +3,7 @@ html, body{
     height: 100%;
 }
 body{
+    /* Source for the background image is https://selfgrowth.info/WDF-8302.html */
     background-image: url("img/Card-table-background.jpg");
 }
 .container{
