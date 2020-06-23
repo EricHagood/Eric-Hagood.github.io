@@ -108,6 +108,9 @@ html, body{
     width: 40%;
     height: 40%;
 }
+.trick img{
+    width: 10%;
+}
 .draw{
     position: relative;
     margin: -50px 200px;

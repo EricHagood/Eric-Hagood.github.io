@@ -97,7 +97,8 @@ function play(event){
     let str = $(event.currentTarget).attr('id');
     $('.trick').append(event.currentTarget);
     moveToTrick(str, 3);
-    aiMove(0);
+    turnOrder = 0;
+    aiMove(turnOrder);
 }
 
 ////////////////////
@@ -152,7 +153,7 @@ function checkStart(){
 ////////////////////
 function aiMove(aiNum){
     moveToTrick(playerArray[aiNum].cards[Math.floor(Math.random() * playerArray[aiNum].cards.length)].code, aiNum);
-    if (aiNum != 3){
+    if (aiNum < 3){
         aiMove(turnOrder++);
     }else{
         $('.playerCard').on('click', play);
