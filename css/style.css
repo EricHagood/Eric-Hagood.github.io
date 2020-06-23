@@ -34,7 +34,7 @@ html, body{
     color: blue;
 }
 /* This is to keep the rules button from disappearing and being inaccesable when viewd on a mobile phone screen */
-@media screen and (max-width: 500px){
+@media screen and (max-width: 600px){
     .rulenav{
         left: 0;
         width: 75px;
